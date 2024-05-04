@@ -23,6 +23,6 @@
 
     <NavUl activeClass="text-blue-600">
         <NavLi href="/aboutus">About us</NavLi>
-        <NavLi href="/locations">Locations</NavLi>
+        <NavLi href="/location">Locations</NavLi>
     </NavUl>
 </Navbar>
