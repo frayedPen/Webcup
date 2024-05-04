@@ -3,8 +3,111 @@
 <script>
     // @ts-nocheck
     import "$lib/app.css"; //tailwind
+    import FamilyImg from "$lib/img/family.jpg";
+    import LandscapeImg from "$lib/img/landscape.jpg";
+    import DoorImg from "$lib/img/door.jpg";
+    import FounderImg from "$lib/img/founder.jpg";
+    import BravoCounter from '$lib/compo/BravoCounter.svelte';
+    import BravoFooter from '$lib/compo/BravoFooter.svelte';
+    import { inview } from 'svelte-inview';
+
+    let isInView = false;
 </script>
 
-<h1>
-    About us
-</h1>
+<!-- 1st section -->
+<div class="pt-10 bg-primary-400 text-center">
+    <div class="text-5xl lg:text-5xl  font-bold">
+        <h1>
+            We Are Restaurant Du Far West,
+        </h1>
+        <h2>
+            Est 1878
+        </h2>
+    </div>
+    <div class="px-96 pt-6 text-md lg:text-lg pb-10">
+        <p>In the rugged heartland of Montana, "Restaurant du Far West" stands as a testament to the resilience and pioneering spirit of the American West. 
+        </p>
+        <p>Founded in 1878 amidst the vast expanse of Big Sky Country, our establishment emerged from the dreams of settlers seeking refuge and community in the wilderness. 
+        </p>
+        <br>
+        <p>
+            Experience the true essence of Montana's frontier spirit by stepping through the swinging doors of "Restaurant du Far West" and 
+        </p>
+        <p class="pb-5">
+            immerse yourself in the rustic charm of a bygone era which mingles with the scent of wood smoke and the aroma of sizzling burgers on the grill.
+        </p>
+    </div>
+    
+</div>
+
+<!--2nd section-->
+<div class="grid grid-cols-3 h-140 overflow-hidden">
+    <img alt="Family img" class="w-full" src={FamilyImg}/>
+    <img alt="Landscape img" class="w-full" src={LandscapeImg}/>
+    <img alt="Door img" class="w-full" src={DoorImg}/>
+</div>
+
+<!--3rd section-->
+<div>
+    <!-- Proxy -->
+    <div
+        use:inview={{ unobserveOnEnter: true, rootMargin: '0%' }}
+        on:inview_enter={(event) => {
+            isInView = true;
+        }}>
+    </div>
+
+    <div class="bg-primary-400 pt-14">
+        <div>
+            <h1 class="text-5xl lg:text-5xl text-center font-semibold">Taste The West, One Bite At A Time!</h1>
+        </div>
+        <div class="grid grid-cols-4 gap-10 p-20">
+
+            {#if isInView}
+                <div class="text-center">
+                    <BravoCounter duration={3} targetValue={146} divClass="text-4xl"/>
+                    <h1 class="text-xl font-extrabold">Years Of Service</h1>
+                </div>
+
+                <div class="text-center">
+                    <BravoCounter duration={3} targetValue={4} divClass="text-4xl"/>
+                    <h1 class="text-xl font-extrabold">Average Star Rating</h1>
+                </div>
+
+                <div class="text-center">
+                    <BravoCounter duration={3} targetValue={5} divClass="text-4xl"/>
+                    <h1 class="text-xl font-extrabold">No Of Restos</h1>
+                </div>
+
+                <div class="text-center">
+                    <BravoCounter duration={3} targetValue={250} divClass="text-4xl"/>
+                    <h1 class="text-xl font-extrabold">Orders Per Day</h1>
+                </div>
+            {/if}
+        </div>
+    </div>
+</div>
+
+<!--4th section-->
+<div class=" px-60 pb-1 flex justify-between">
+    <div>
+        <h1 class=" px-14 pt-14 text-5xl lg:text-7xl">Behind The Success</h1>
+        <div class="px-5 pt-6 text-md lg:text-lg pb-10">
+            <p class="pt-5">In the heart of Montana's rugged landscape, Tobias Henry Thompson, a seasoned cowboy turned chef, 
+                founded "Restaurant du Far West" in 1878 at the age of 40.
+            </p>
+            <p class="pt-5">With a passion for hearty fare, Tobias specialized in burgers and beer, sourcing ingredients from local ranches. 
+                His signature dish, the bison burger, became a frontier favourite, drawing travellers and locals alike to his rustic eatery. 
+            </p>
+            <p class="pt-5">With its warm hospitality and flavorful cuisine, "Restaurant du Far West" soon became a beloved landmark in Timber Ridge, 
+                cementing John's legacy as the pioneer of Montana cuisine. 
+            </p>
+        </div>
+    </div>
+    <div class="p-14">
+        <img alt="Founder img" class="w-full" src={FounderImg}/>
+    </div>
+</div>
+                
+<!-- Footer -->
+<BravoFooter />

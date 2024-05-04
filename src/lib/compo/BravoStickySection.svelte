@@ -11,6 +11,6 @@
 
     <div class="w-1/2 top-0 p-10 relative">
         <img src="{poster}" alt="Poster" class="h-screen">
-        <img src="{poster}" alt="Poster" class="h-screen">
+        <!-- <img src="{poster}" alt="Poster" class="h-screen"> -->
     </div>
 </div>

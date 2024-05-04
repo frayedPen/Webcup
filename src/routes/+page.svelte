@@ -28,10 +28,16 @@
 
 <BravoMealBuilder />
 
-<div class="bg-primary-400 grid grid-cols-3 items-center py-6 px-6 lg:py-10 lg:px-40">
-    <div class="col-span-2 text-center">
-        <h1 class="text-5xl lg:text-9xl">Our Speciality</h1>
-        <h2 class="text-4xl lg:text-8xl">Beers & Burger</h2>
+<div class="bg-primary-400 grid grid-cols-3 items-center py-6 px-20 lg:py-10 ">
+    <div class="col-span-2 text-center px-40">
+        <h1 class="text-5xl lg:text-7xl">Our Speciality</h1>
+        <h2 class="text-4xl lg:text-6xl pt-2">Beers & Burgers</h2>
+        <p class="px-5 pt-10 pb-2 text-3xl lg:text-xl">Our speciality at "Restaurant Du Far West" is crafting 
+            mouthwatering burgers paired perfectly with ice-cold beers. 
+        </p>
+        <p class="px-5 pt-5 pb-2 text-3xl lg:text-xl">Each burger is a flavour masterpiece, featuring locally sourced ingredients and bold, rustic seasonings 
+           that payhomage to Montana's culinary heritage. 
+        </p>
     </div>
     
     <img class="col-start-3" src="{beerBurger}" alt="Beer and burger">
@@ -39,6 +45,7 @@
 
 <!-- Parallax background -->
 <div class="h-96 lg:h-80 z-40 relative items-center justify-center flex bg-transparent overflow-hidden">
+    <h1 class="pt-14 pb-14 font-bold text-white text-6xl z-10 relative">Rustic Flavours, Modern Delights!</h1>
     <div class="h-screen w-full left-0 top-0 absolute z-0 bg-fixed object-cover" style="background-image: url('{parallaxBack}');"></div>
 </div>
 

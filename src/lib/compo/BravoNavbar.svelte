@@ -5,7 +5,7 @@
     import logo from '$lib/img/logo.jpg';
 </script>
 
-<Navbar class="border-b py-0 absolute top-0 z-50">
+<Navbar class="border-b py-0 top-0 z-50">
     <NavUl>
         <NavLi>
             <Button outline color="dark">Reservation</Button>
