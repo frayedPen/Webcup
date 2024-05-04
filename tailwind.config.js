@@ -6,14 +6,17 @@ export default {
       colors: {
         // flowbite-svelte
         primary: {
-          400: '#FAF3DD',
+          400: '#F7B85D', // Light yellow
         },
         secondary: {
-          400: '#4A7C59',
-          600: '#183E33',
+          400: '#E47F4D', // Orange
+          600: '#B2442C', // Dark red
         },
         accent1: {
-          400: '#68B0AB',
+          400: '#7F7948', // Teal
+        },
+        accent2: {
+          400: '#6D9599', // Blue
         },
       }
     },
