@@ -1,8 +1,11 @@
-<!-- <a href="/netflix">netflix</a> -->
-
 <script>
+    // @ts-nocheck
     import "$lib/app.css"; //tailwind
+    
+    import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
 </script>
+
+<BravoNavbar />
 
 <slot />
 
