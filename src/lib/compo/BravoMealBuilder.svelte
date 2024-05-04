@@ -42,8 +42,8 @@
     }
 </script>
 
-<div class="h-screen bg-white w-full">
-    <div class="grid grid-cols-1 grid-rows-2 p-10 lg:p-40">
+<div class="bg-white w-full">
+    <div class="grid grid-rows-2 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 p-10 lg:px-40 lg:py-20">
 
         <div class="row-start-2 lg:row-start-1 mt-8">
             {#if visible[0]}
