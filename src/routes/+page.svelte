@@ -5,17 +5,15 @@
     import "$lib/app.css"; //tailwind
     import BravoMealBuilder from "$lib/compo/BravoMealBuilder.svelte"
     import BravoReservation from "$lib/compo/BravoReservation.svelte"
-    import { Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
-
-    import landingImage from '$lib/img/landingImage.jpg';
+    import BravoStickySection from "$lib/compo/BravoStickySection.svelte"
+    import BravoFooter from "$lib/compo/BravoFooter.svelte"
     import beerBurger from '$lib/img/beer and burger.jpg';
     import parallaxBack from '$lib/img/parallaxBack.jpg';
+    import BravoLanding from '$lib/compo/BravoLanding.svelte';
 </script>
 
 <!-- Landing -->
-<div class="bravo-landing-image bg-cover bg-no-repeat relative" style="background-image: url('{landingImage}');">
-
-</div>
+<BravoLanding />
 
 <BravoMealBuilder />
 
@@ -35,6 +33,11 @@
 
 <!-- Make reservations -->
 <BravoReservation />
+
+<BravoStickySection />
+
+<!-- Footer -->
+<BravoFooter />
 
 <style>
     :global(.bravo-landing-image) {
