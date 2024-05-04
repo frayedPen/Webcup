@@ -1,0 +1,63 @@
+<script>
+    // @ts-nocheck
+    import baseImg from '$lib/img/landingImageBase.png';
+    import sun from '$lib/img/sun.png';
+    import tumble from '$lib/img/tumble.png';
+    
+    import { Button, } from 'flowbite-svelte';
+</script>
+
+<div class="bravo-landing-image h-screen bg-[#ffc275] overflow-hidden relative">
+    <img src="{baseImg}" alt="" class="absolute bottom-0 left-0 z-40">
+    
+    <div class="h-4/6 w-screen text-6xl flex justify-center items-center flex-col absolute top-0">
+        <h1 class="text-white">Are You Craving The Far West Taste?</h1>
+        <Button pill size="lg">Order Now</Button>
+    </div>
+
+    <img src="{tumble}" alt="tumble weed" class="w-40 absolute z-40 bottom-0 bravo-tumble-1">
+
+    <img src="{sun}" class="absolute right-80 z-10 bravo-sun w-24" alt="">
+</div>
+
+<style>
+    .bravo-landing-image {
+        background-color: #b1b0c1;
+        animation: fade 2s linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fade {
+        to { background-color: #ffc275; }
+    }
+
+    .bravo-tumble-1 {
+        left:-10%;
+        /* transform: translateX(-100%); */
+        animation: xMove 10s linear , bounce 1s infinite;
+        animation-fill-mode: forwards;
+    }
+
+    .bravo-sun {
+        bottom:0%;
+        animation: sunRise 6s linear, rotate 15s infinite linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes xMove {
+        to { left: 100%; transform: rotate(720deg); }
+    }
+
+    @keyframes rotate {
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes bounce { 
+        0%, 100% {bottom:-5px;} 
+        50% {bottom: 30px;} 
+    }
+
+    @keyframes sunRise {
+        to { bottom: 60%; }
+    }
+</style>

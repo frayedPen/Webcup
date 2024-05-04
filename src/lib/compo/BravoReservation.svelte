@@ -5,9 +5,12 @@
     import { UserOutline, } from 'flowbite-svelte-icons';
     let selected;
     let countries = [
-        { value: 'us', name: 'United States' },
-        { value: 'ca', name: 'Canada' },
-        { value: 'fr', name: 'France' }
+        { value: '1', name: '1 people' },
+        { value: '2', name: '2 people' },
+        { value: '3', name: '3 people' },
+        { value: '4', name: '4 people' },
+        { value: '5', name: '5 people' },
+        { value: '6', name: '6 people' },
     ];
 </script>
 
