@@ -7,16 +7,23 @@
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
     import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
     import { PhoneSolid } from 'flowbite-svelte-icons';
-    import { DarkMode, } from 'flowbite-svelte';
+    import { DarkMode, } from 'flowbite-svelte';   
+     import { onMount } from 'svelte';
+    import { fly, } from 'svelte/transition';
+
+    let ready = false;
+    onMount(() => ready = true);
 </script>
 
 <BravoNavbar />
 
 <!--1st section-->
-<div class="bg-primary-200 dark:bg-primary-dark-200">
-    <h1 class="pt-32 pb-32 text-5xl lg:text-5xl font-bold text-center" id="title">
-        Hours & Locations
-    </h1>
+<div class="bg-primary-200 dark:bg-primary-dark-200 py-32">
+    {#if ready}
+        <h1 in:fly={{delay: 0, duration:1000, y:50}}  class="text-5xl lg:text-5xl font-bold text-center" id="title">
+            Hours & Locations
+        </h1>
+    {/if}
 </div>
 
 <!--2nd section-->

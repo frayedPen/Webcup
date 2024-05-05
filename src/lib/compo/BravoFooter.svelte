@@ -25,7 +25,7 @@
                 {/each}
             </div>
         </div>
-
+        
         <div class="col-start-4 row-start-1">
             <div id="ecoindex-badge" class="-space-y-2 mb-10"></div>
             <h1 class="text-white text-lg lg:text-2xl">Get the latest Newsletter</h1>

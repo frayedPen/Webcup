@@ -144,7 +144,7 @@
                 </div>
             {:else}
                 <div class="row-start-2 lg:row-start-1 mt-8">
-                    <h1 class="text-xl mb-4">Your order is confirmed and will delivered shortly</h1>
+                    <h1 class="text-xl mb-4">Your order is confirmed and will be delivered shortly</h1>
                     <Button color="blue" on:click={reset}><RefreshOutline /> New order</Button>
                 </div>
             {/if}

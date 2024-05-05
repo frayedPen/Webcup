@@ -11,21 +11,27 @@
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
     import { inview } from 'svelte-inview';
     import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
-    import { DarkMode, } from 'flowbite-svelte';
+    import { onMount } from 'svelte';
+    import { fly, } from 'svelte/transition';
 
+    let ready = false;
     let isInView = false;
+    onMount(() => ready = true);
+
 </script>
 
 <BravoNavbar />
 <!-- 1st section -->
 <div class="pt-10 bg-primary-200 dark:bg-primary-dark-200 text-center">
     <div class="text-5xl lg:text-5xl  font-bold" id="title">
-        <h1>
-            We Are Restaurant Du Far West,
-        </h1>
-        <h2>
-            Est 1878
-        </h2>
+        {#if ready}
+            <h1 in:fly={{delay: 0, duration:1000, y:50}}>
+                We Are Restaurant Du Far West,
+            </h1>
+            <h2 in:fly={{delay: 300, duration:1000, y:50}}>
+                Est 1878
+            </h2>
+        {/if}
     </div>
     <div class="px-5 lg:px-10 lg:px-20 2xl:px-96 pt-6 text-md lg:text-lg pb-10">
         <p>In the rugged heartland of Montana, "Restaurant du Far West" stands as a testament to the resilience and pioneering spirit of the American West. 
@@ -45,9 +51,9 @@
 
 <!--2nd section-->
 <div class="grid grid-cols-3 h-140 overflow-hidden">
-    <img alt="Family img" class="w-full" src={FamilyImg}/>
-    <img alt="Landscape img" class="w-full" src={LandscapeImg}/>
-    <img alt="Door img" class="w-full" src={DoorImg}/>
+    <img alt="Family img" class="w-full hover:scale-105 duration-300 z-0" src={FamilyImg}/>
+    <img alt="Landscape img" class="w-full hover:scale-105 duration-300 z-10" src={LandscapeImg}/>
+    <img alt="Door img" class="w-full hover:scale-105 duration-300 z-20" src={DoorImg}/>
 </div>
 
 <!--3rd section-->

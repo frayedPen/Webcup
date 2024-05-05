@@ -42,7 +42,7 @@
         Our speciality at "Restaurant Du Far West" is crafting mouthwatering burgers paired perfectly with ice-cold beers. 
     </p>
     <p class="text-center col-start-1 col-span-3 lg:col-span-2 lg:row-start-4 lg:col-start-1 px-5 pb-2 text-3xl lg:text-xl">
-        Each burger is a flavour masterpiece, featuring locally sourced ingredients and bold, rustic seasonings that payhomage to Montana's culinary heritage. 
+        Each burger is a flavour masterpiece, featuring locally sourced ingredients and bold, rustic seasonings that pay homage to Montana's culinary heritage. 
     </p>
 
 </div>
