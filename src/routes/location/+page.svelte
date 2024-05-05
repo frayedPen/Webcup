@@ -11,7 +11,7 @@
 <BravoNavbar />
 
 <!--1st section-->
-<div class="bg-primary-400">
+<div class="bg-primary-200">
     <h1 class="pt-32 pb-32 text-5xl lg:text-5xl font-bold text-center">
         Hours & Location
     </h1>
