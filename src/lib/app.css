@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'RioGrande';
+    src: url('/public/fonts/RioGrande.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Royale';
+    src: url('/public/fonts/Royale.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CaviarDreams';
+    src: url('/public/fonts/CaviarDreams.ttf') format('truetype');
+}
+
+body {
+    /* font-family: 'RioGrande', sans-serif; */
+}

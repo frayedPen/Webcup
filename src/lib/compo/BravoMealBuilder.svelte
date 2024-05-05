@@ -2,16 +2,12 @@
     // @ts-nocheck
     import "$lib/app.css"; //tailwind
 
-    import { Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
+    import { Navbar, NavBrand,Input, Label, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
     import {onMount} from 'svelte';
-    import bottomBun from "$lib/img/bottomBun.jpg";
-    import leaves from "$lib/img/leaves.jpg";
+    import BravoOrderForm from "$lib/compo/BravoOrderForm.svelte";
+    import { RefreshOutline, } from 'flowbite-svelte-icons';
     import meat from "$lib/img/meat.jpg";
-    import topBun from "$lib/img/topBun.jpg";
-    import sandwich from "$lib/img/sandwich.jpg";
     import blank from "$lib/img/blank.jpg";
-
-    import {fly,} from 'svelte/transition';
 
     const categories = 4;
 
@@ -22,21 +18,6 @@
             'Accept': 'application/json'
         }
     };
-
-    // const menuItems = [
-    //     [ // Top of bun
-    //         topBun,
-    //         sandwich,
-    //     ],[
-    //         meat,
-    //         leaves,
-    //     ],[
-    //         bottomBun,
-    //         topBun,
-    //         meat,
-    //     ]
-    // ];
-    
     const menuItems = new Array(categories).fill(null).map(() => []);
 
     let loaded = false;
@@ -69,6 +50,7 @@
     let chosen = new Array(categories).fill(-1);
     visible[0] = true;
     let index = 0;
+    let screen = 0;
 
     function nextPage() {
         visible[index] = false;
@@ -76,34 +58,83 @@
         index++;
         visible[index] = true; 
     }
+
+    function nextScreen() {
+        screen++;
+    }
+
+    function reset() {
+        visible = new Array(categories).fill(false);
+        chosen = new Array(categories).fill(-1);
+        visible[0] = true;
+        index = 0;
+        screen = 0;
+    }
 </script>
 
-<div class="w-full bg-accent2-400 z-50" id="order">
-    <div class="grid grid-rows-2 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 p-10 lg:px-40 lg:py-10">
+<div class="w-full z-50 ">
+    <div class="" id="order">
+        <div class="grid grid-rows-2 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 p-10 lg:px-40 lg:py-10">
 
-        <div class="row-start-2 lg:row-start-1 mt-8">
-            {#key loaded}
-                {#each menuItems as category, i}
-                    {#if visible[i]}
-                        <!-- svelte-ignore missing-declaration -->
-                        <!-- svelte-ignore a11y-click-events-have-key-events -->
-                        <!-- svelte-ignore a11y-no-static-element-interactions -->
-                        <div class="grid grid-rows-4 grid-cols-4 gap-2">
-                            <h1 class="col-start-2 text-center text-xl col-span-2">The Base</h1>
-                            {#each category as c, j}
-                                <Button pill color="blue" on:click={nextPage.bind(j)} class="col-start-2 col-span-2">{c.name}</Button>                            
-                            {/each}
+            {#if screen==0}
+                <div class="row-start-2 lg:row-start-1 mt-8">
+                    {#key loaded}
+                        {#each menuItems as category, i}
+                            {#if visible[i]}
+                                <!-- svelte-ignore missing-declaration -->
+                                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                                <!-- svelte-ignore a11y-no-static-element-interactions -->
+                                <div class="grid grid-rows-4 grid-cols-4 gap-2">
+                                    <h1 class="col-start-2 text-center text-xl col-span-2">The Base</h1>
+                                    {#each category as c, j}
+                                        <Button pill color="blue" on:click={nextPage.bind(j)} class="col-start-2 col-span-2">{c.name}</Button>                            
+                                    {/each}
+                                </div>
+                            {/if}
+                        {/each}
+                    {/key}
+
+                    {#if chosen[3] != -1}
+                        <div class="row-start-2 lg:row-start-1 mt-8 flex flex-col px-40">
+                            <Button color="blue" on:click={nextScreen}><RefreshOutline /> Place order</Button>
+                            <br>
+                            <Button color="red" on:click={reset}><RefreshOutline /> Recreate</Button>
                         </div>
                     {/if}
+                </div>
+            {:else if screen == 1}
+                <div class="row-start-2 lg:row-start-1 mt-8">
+                    <div class="mb-6">
+                        <Label for="first-name" class="block mb-2">First name</Label>
+                        <Input id="first-name" placeholder="First Name" />
+                    </div>
+                    <div class="mb-6">
+                        <Label for="last-name" class="block mb-2">Last name</Label>
+                        <Input id="last-name" placeholder="Last Name" />
+                    </div>
+                    <div class="mb-6">
+                        <Label for="address" class="block mb-2">Address</Label>
+                        <Input id="address" placeholder="Address" />
+                    </div>
+                    <div class="mb-6">
+                        <Label for="email" class="block mb-2">Email</Label>
+                        <Input id="email" placeholder="Email" />
+                    </div>
+                    <Button color="blue" on:click={nextScreen}>Confirm</Button>
+                </div>
+            {:else}
+                <div class="row-start-2 lg:row-start-1 mt-8">
+                    <h1 class="text-xl mb-4">Your order is confirmed and will delivered shortly</h1>
+                    <Button color="blue" on:click={reset}><RefreshOutline /> New order</Button>
+                </div>
+            {/if}
+        
+            <div class="grid grid-cols-1 auto-rows-auto row-start-1 lg:row-start-1 px-20">
+                {#each refs as ref,i}
+                    <img src="{chosen[i]!=-1 ? menuItems[i][chosen[i]].media:blank}" alt="" bind:this={ref} class="w-full">
                 {/each}
-            {/key}
-        </div>
-      
-        <div class="grid grid-cols-1 auto-rows-auto row-start-1 lg:row-start-1 px-20">
-            {#each refs as ref,i}
-                <img src="{chosen[i]!=-1 ? menuItems[i][chosen[i]].media:blank}" alt="" bind:this={ref} class="w-full">
-            {/each}
-            <img src="{chosen[0]!=-1 ? menuItems[0][chosen[0]].media:blank}" alt="" class="w-full -scale-y-100">
+                <img src="{chosen[0]!=-1 ? menuItems[0][chosen[0]].media:blank}" alt="" class="w-full -scale-y-100">
+            </div>
         </div>
     </div>
 </div>

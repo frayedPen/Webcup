@@ -17,7 +17,7 @@
 
 <BravoNavbar />
 <!-- 1st section -->
-<div class="pt-10 bg-primary-400 text-center">
+<div class="pt-10 bg-primary-200 text-center">
     <div class="text-5xl lg:text-5xl  font-bold">
         <h1>
             We Are Restaurant Du Far West,
@@ -59,7 +59,7 @@
         }}>
     </div>
 
-    <div class="bg-primary-400 pt-14">
+    <div class="bg-primary-200 pt-14">
         <div>
             <h1 class="text-5xl lg:text-5xl text-center font-semibold">Taste The West, One Bite At A Time!</h1>
         </div>
