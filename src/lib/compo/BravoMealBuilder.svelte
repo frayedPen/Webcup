@@ -61,8 +61,6 @@
         });
 
         loaded = true;
-
-        console.log(menuItems);
     });
 
     const refs = new Array(categories).fill(null);

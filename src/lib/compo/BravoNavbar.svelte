@@ -3,9 +3,11 @@
     import "$lib/app.css"; //tailwind
     import { Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
     import logo from '$lib/img/logo.jpg';
+    import { page } from '$app/stores';
+
 </script>
 
-<Navbar class="border-b py-0 absolute top-0 z-50">
+<Navbar class="border-b py-0 relative top-0 z-50">
     <NavBrand href="/">
         <img src="{logo}" class="me-3 h-28" alt="Restaurent du far west" /> 
         <NavHamburger />
