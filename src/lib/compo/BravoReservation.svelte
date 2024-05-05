@@ -1,23 +1,30 @@
 <script>
     // @ts-nocheck
     import "$lib/app.css"; //tailwind
-    import { Select, Label,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
+    import { Select, Label,Input, Button, ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
+    import { UserOutline, } from 'flowbite-svelte-icons';
     let selected;
     let countries = [
-        { value: 'us', name: 'United States' },
-        { value: 'ca', name: 'Canada' },
-        { value: 'fr', name: 'France' }
+        { value: '1', name: '1 people' },
+        { value: '2', name: '2 people' },
+        { value: '3', name: '3 people' },
+        { value: '4', name: '4 people' },
+        { value: '5', name: '5 people' },
+        { value: '6', name: '6 people' },
     ];
 </script>
 
-<div class="h-screen pt-20">
-    <h1 class="text-6xl lg:text-7xl text-center">Make a reservation</h1>
-    <div class="grid grid-cols-3 grid-rows-2">
-        <Input placeholder="Calendar" />
-        <Input placeholder="Time" />
-        <Label>
-            Select an option
-            <Select class="mt-2" items={countries} bind:value={selected} />
-        </Label>
+<div class="py-20 px-60" id="reservations">
+    <div class="bg-accent2-400 p-10">
+        <h1 class="text-6xl lg:text-7xl text-center mb-10 text-white">Make a reservation</h1>
+        <div class="grid grid-cols-3 grid-rows-2 gap-10">
+            <Input placeholder="Calendar" type="date"/>
+            <Input placeholder="Time"  type="time"/>
+            <div class="flex items-center">
+                <UserOutline class="w-10 h-10" />
+                <Select class="mt-2" items={countries} bind:value={selected} />
+            </div>
+            <Button outline color="dark" class="col-start-2 text-white hover:bg-primary-500">Make Reservation</Button>
+        </div>
     </div>
 </div>
