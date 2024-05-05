@@ -74,10 +74,10 @@
 
 <div class="w-full z-50 ">
     <div class="" id="order">
-        <div class="grid grid-rows-2 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 p-10 lg:px-40 lg:py-10">
+        <div id="custom-grid" class="grid grid-rows-2 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 p-10 lg:px-20 xl:px-40 lg:py-10">
 
             {#if screen==0}
-                <div class="row-start-2 lg:row-start-1 mt-8">
+                <div class="row-start-2 lg:row-start-1 xl:mt-4">
                     {#key loaded}
                         {#each menuItems as category, i}
                             {#if visible[i]}
@@ -87,7 +87,7 @@
                                 <div class="grid grid-rows-4 grid-cols-4 gap-2">
                                     <h1 class="col-start-2 text-center text-xl col-span-2">The Base</h1>
                                     {#each category as c, j}
-                                        <Button pill color="blue" on:click={nextPage.bind(j)} class="col-start-2 col-span-2">{c.name}</Button>                            
+                                        <Button pill color="blue" size="xl" on:click={nextPage.bind(j)} class="col-start-2 col-span-2">{c.name}</Button>                            
                                     {/each}
                                 </div>
                             {/if}
@@ -95,29 +95,25 @@
                     {/key}
 
                     {#if chosen[3] != -1}
-                        <div class="row-start-2 lg:row-start-1 mt-8 flex flex-col px-40">
-                            <Button color="blue" on:click={nextScreen}><RefreshOutline /> Place order</Button>
+                        <div class="row-start-2 lg:row-start-1 xl:mt-8 flex flex-col px-10 mt-4 lg:mt-0 xl:px-40">
+                            <Button color="blue" on:click={nextScreen}> Place order</Button>
                             <br>
                             <Button color="red" on:click={reset}><RefreshOutline /> Recreate</Button>
                         </div>
                     {/if}
                 </div>
             {:else if screen == 1}
-                <div class="row-start-2 lg:row-start-1 mt-8">
+                <div class="row-start-2 lg:row-start-1 mt-4 xl:mt-8">
                     <div class="mb-6">
-                        <Label for="first-name" class="block mb-2">First name</Label>
                         <Input id="first-name" placeholder="First Name" />
                     </div>
                     <div class="mb-6">
-                        <Label for="last-name" class="block mb-2">Last name</Label>
                         <Input id="last-name" placeholder="Last Name" />
                     </div>
                     <div class="mb-6">
-                        <Label for="address" class="block mb-2">Address</Label>
                         <Input id="address" placeholder="Address" />
                     </div>
                     <div class="mb-6">
-                        <Label for="email" class="block mb-2">Email</Label>
                         <Input id="email" placeholder="Email" />
                     </div>
                     <Button color="blue" on:click={nextScreen}>Confirm</Button>
@@ -129,7 +125,7 @@
                 </div>
             {/if}
         
-            <div class="grid grid-cols-1 auto-rows-auto row-start-1 lg:row-start-1 px-20">
+            <div class="grid grid-cols-1 auto-rows-auto row-start-1 lg:row-start-1 px-10 xl:px-20">
                 {#each refs as ref,i}
                     <img src="{chosen[i]!=-1 ? menuItems[i][chosen[i]].media:blank}" alt="" bind:this={ref} class="w-full">
                 {/each}
@@ -138,3 +134,11 @@
         </div>
     </div>
 </div>
+
+<style>
+    @media only screen and (max-width: 1024px) {
+        #custom-grid {
+            grid-template-rows: minmax(0, 1fr);
+        }
+    }
+</style>

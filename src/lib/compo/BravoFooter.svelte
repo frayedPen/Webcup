@@ -5,7 +5,7 @@
     import facebook from '$lib/img/facebook white.png';
     import logo from '$lib/img/logo transparent.png';
 
-    const socials = [instagram, x, facebook, ];   
+    const socials = [instagram, x, facebook, ];
     
     import {onMount} from 'svelte';
 

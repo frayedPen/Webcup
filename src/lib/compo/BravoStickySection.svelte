@@ -5,10 +5,10 @@
 
 <div class="w-full bg-white z-40 relative flex justify-end pt-10 pb-20">
     <div class="sticky top-10 w-1/2 p-10 self-start text-center">
-        <h1 class="text-6xl">Join Our</h1>
-        <h1 class="text-6xl mt-2">Next Event</h1>
+        <h1 class="text-4xl md:text-6xl">Join Our</h1>
+        <h1 class="text-4xl md:text-6xl mt-2">Next Event</h1>
 
-        <div class="pt-10 text-3xl lg:text-xl">
+        <div class="pt-10 text-lg md:text-xl lg:text-2xl">
             <h2>Round 'em up, partners! </h2>
             <p class="pt-5">Join us for a classic Campfire Sing-Along, </p>
             <p>FT WORTH style! </p>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="w-1/2 top-0 p-10 relative">
-        <img src="{poster}" alt="Poster" class="h-screen">
+        <img src="{poster}" alt="Poster" class="">
         <!-- <img src="{poster}" alt="Poster" class="h-screen"> -->
     </div>
 </div>
