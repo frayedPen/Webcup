@@ -8,12 +8,16 @@
 </script>
 
 <div class="bravo-landing-image h-screen bg-[#ffc275] overflow-hidden relative">
-    <img src="{baseImg}" alt="" class="absolute bottom-0 left-0 z-40">
     
-    <div class="h-4/6 w-screen text-6xl flex justify-center items-center flex-col absolute top-0">
+    <div class="h-4/6 w-screen text-6xl flex justify-center items-center flex-col absolute top-0 z-30">
         <h1 class="text-white">Are You Craving The Far West Taste?</h1>
-        <Button pill size="lg">Order Now</Button>
+        <div>
+            <Button outline color="dark" size="xl" href="#reservations">Reservation</Button>
+            <Button outline color="dark" size="xl" href="#order">Order Now</Button>
+        </div>
     </div>
+
+    <img src="{baseImg}" alt="" class="absolute bottom-0 left-0 z-20">
 
     <img src="{tumble}" alt="tumble weed" class="w-40 absolute z-40 bottom-0 bravo-tumble-1">
 

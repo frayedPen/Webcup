@@ -5,7 +5,10 @@
     import "$lib/app.css"; //tailwind
     import MapImg from "$lib/img/map.png";
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
+    import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
 </script>
+
+<BravoNavbar />
 
 <!--1st section-->
 <div class="bg-primary-400">

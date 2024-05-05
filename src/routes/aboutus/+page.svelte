@@ -10,10 +10,12 @@
     import BravoCounter from '$lib/compo/BravoCounter.svelte';
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
     import { inview } from 'svelte-inview';
+    import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
 
     let isInView = false;
 </script>
 
+<BravoNavbar />
 <!-- 1st section -->
 <div class="pt-10 bg-primary-400 text-center">
     <div class="text-5xl lg:text-5xl  font-bold">
