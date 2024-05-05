@@ -52,6 +52,12 @@
 <!-- Make reservations -->
 <BravoReservation />
 
+<!--Banner-->
+<div class="h-20 w-full bg-accent2-400 text-3xl py-5 text-center relative z-50 text-white">
+    Our Philosophy - Honour the Land with Hearty Meals
+</div>
+
+
 <BravoStickySection />
 
 <!-- Footer -->
