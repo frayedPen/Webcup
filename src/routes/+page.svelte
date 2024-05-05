@@ -10,7 +10,7 @@
     import beerBurger from '$lib/img/beer and burger.jpg';
     import parallaxBack from '$lib/img/parallaxBack.jpg';
     import BravoLanding from '$lib/compo/BravoLanding1.svelte';
-    import { Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
+    import { DarkMode, Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
     import logo from '$lib/img/logo.jpg';    
     
 
@@ -24,17 +24,19 @@
     </NavBrand>
 
     <NavUl activeClass="text-blue-600">
-        <NavLi href="/aboutus">About us</NavLi>
-        <NavLi href="/location">Locations</NavLi>
+        <NavLi href="/" class="h-full flex items-center">Home</NavLi>
+        <NavLi href="/aboutus" class="h-full flex items-center">About us</NavLi>
+        <NavLi href="/location" class="h-full flex items-center">Locations</NavLi>
+        <NavLi><DarkMode /></NavLi>
     </NavUl>
 </Navbar>
 
 <!-- Landing -->
 <BravoLanding />
 
-<div class="bg-primary-400 grid grid-cols-3 justify-items-center py-6 lg:px-20 lg:py-10">
-    <h1 class="text-center col-start-1 col-span-3 lg:col-span-2 lg:row-start-1 text-5xl lg:text-7xl">Our Speciality</h1>
-    <h2 class="text-center col-start-1 col-span-3 lg:col-span-2 lg:row-start-2 text-4xl lg:text-6xl pt-2">Beers & Burgers</h2>
+<div class="bg-primary-400 dark:bg-primary-dark-400 grid grid-cols-3 justify-items-center py-6 lg:px-20 lg:py-10">
+    <h1 class="text-center col-start-1 col-span-3 lg:col-span-2 lg:row-start-1 text-5xl lg:text-7xl" id="title">Our Speciality</h1>
+    <h2 class="text-center col-start-1 col-span-3 lg:col-span-2 lg:row-start-2 text-4xl lg:text-6xl pt-2" id="title">Beers & Burgers</h2>
     <img class="col-start-1 col-span-3 lg:col-span-1 lg:col-start-3 lg:row-start-1 lg:row-span-5 inline-block py-5 lg:py-0" src="{beerBurger}" alt="Beer and burger">
     <p class="text-center col-start-1 col-span-3 lg:col-span-2 lg:row-start-3 px-5 pt-0 lg:pt-10 pb-2 text-3xl lg:text-xl">
         Our speciality at "Restaurant Du Far West" is crafting mouthwatering burgers paired perfectly with ice-cold beers. 
