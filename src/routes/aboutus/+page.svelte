@@ -11,14 +11,15 @@
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
     import { inview } from 'svelte-inview';
     import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
+    import { DarkMode, } from 'flowbite-svelte';
 
     let isInView = false;
 </script>
 
 <BravoNavbar />
 <!-- 1st section -->
-<div class="pt-10 bg-primary-200 text-center">
-    <div class="text-5xl lg:text-5xl  font-bold">
+<div class="pt-10 bg-primary-200 dark:bg-primary-dark-200 text-center">
+    <div class="text-5xl lg:text-5xl  font-bold" id="title">
         <h1>
             We Are Restaurant Du Far West,
         </h1>
@@ -59,9 +60,9 @@
         }}>
     </div>
 
-    <div class="bg-primary-200 pt-14">
+    <div class="bg-primary-200 dark:bg-primary-dark-200 pt-14">
         <div>
-            <h1 class="text-5xl lg:text-5xl text-center font-semibold">Taste The West, One Bite At A Time!</h1>
+            <h1 class="text-5xl lg:text-5xl text-center font-semibold" id="title">Taste The West, One Bite At A Time!</h1>
         </div>
         <div class="grid grid-cols-4 gap-10 p-20">
 
@@ -93,7 +94,7 @@
 <!--4th section-->
 <div class=" px-60 pb-1 flex justify-between">
     <div>
-        <h1 class=" px-14 pt-14 text-5xl lg:text-7xl">Behind The Success</h1>
+        <h1 class=" px-14 pt-14 text-5xl lg:text-7xl" id="title">Behind The Success</h1>
         <div class="px-5 pt-6 text-md lg:text-lg pb-10">
             <p class="pt-5">In the heart of Montana's rugged landscape, Tobias Henry Thompson, a seasoned cowboy turned chef, 
                 founded "Restaurant du Far West" in 1878 at the age of 40.
@@ -113,3 +114,9 @@
                 
 <!-- Footer -->
 <BravoFooter />
+
+<style>
+    #title {
+        font-family: 'Royale', sans-serif
+    }
+</style>

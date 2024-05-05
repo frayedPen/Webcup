@@ -5,8 +5,8 @@
 
 <div class="w-full bg-white z-40 relative flex justify-end pt-10 pb-20">
     <div class="sticky top-10 w-1/2 p-10 self-start text-center">
-        <h1 class="text-6xl">Join Our</h1>
-        <h1 class="text-6xl mt-2">Next Event</h1>
+        <h1 class="text-6xl" id="title">Join Our</h1>
+        <h1 class="text-6xl mt-2" id="title">Next Event</h1>
 
         <div class="pt-10 text-3xl lg:text-xl">
             <h2>Round 'em up, partners! </h2>
@@ -25,3 +25,9 @@
         <!-- <img src="{poster}" alt="Poster" class="h-screen"> -->
     </div>
 </div>
+
+<style>
+    #title {
+        font-family: 'Royale', sans-serif
+    }
+</style>

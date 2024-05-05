@@ -7,13 +7,14 @@
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
     import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
     import { PhoneSolid } from 'flowbite-svelte-icons';
+    import { DarkMode, } from 'flowbite-svelte';
 </script>
 
 <BravoNavbar />
 
 <!--1st section-->
-<div class="bg-primary-200">
-    <h1 class="pt-32 pb-32 text-5xl lg:text-5xl font-bold text-center">
+<div class="bg-primary-200 dark:bg-primary-dark-200">
+    <h1 class="pt-32 pb-32 text-5xl lg:text-5xl font-bold text-center" id="title">
         Hours & Locations
     </h1>
 </div>
@@ -22,7 +23,7 @@
 <div class="grid grid-cols-2 px-52 pt-14">
     <div class="flex flex-col justify-center gap-10">
         <div>
-            <h1 class="font-bold">Opening and Closing hours</h1>
+            <h1 class="font-bold" >Opening and Closing hours</h1>
             <h2 class="pt-5 font-semibold">Brunch</h2>
             <p>Saturdays & Sundays: </p>
             <div> 10:30 am - 3 pm</div>
@@ -75,3 +76,9 @@
 
 <!-- Footer -->
 <BravoFooter />
+
+<style>
+    #title {
+        font-family: 'Royale', sans-serif
+    }
+</style>
