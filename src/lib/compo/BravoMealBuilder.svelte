@@ -4,7 +4,7 @@
 
     import { Navbar, NavBrand,Input, Label, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
     import {onMount} from 'svelte';
-    import BravoOrderForm from "$lib/compo/BravoOrderForm.svelte";
+    import { Toast } from 'flowbite-svelte';
     import { RefreshOutline, } from 'flowbite-svelte-icons';
     import meat from "$lib/img/meat.jpg";
     import blank from "$lib/img/blank.jpg";
@@ -13,7 +13,6 @@
 
     const options = {
         method: 'GET',
-        // body: JSON.stringify( params ),
         headers: {
             'Accept': 'application/json'
         }
@@ -21,9 +20,10 @@
     const menuItems = new Array(categories).fill(null).map(() => []);
 
     let loaded = false;
+    let showError = false;
 
     onMount(async () => {
-        const items = await fetch('https://bravo6.latchoomun.com/api/food_items?page=1', options).then((x) => x.json());
+        const items = await fetch("https://bravo6.latchoomun.com/api/food_items?page=1", options).then((x) => x.json());
 
         const mediaIn = await fetch('https://bravo6.latchoomun.com/api/medias?page=1', options).then((x) => x.json()),
             medias = [];
@@ -51,6 +51,11 @@
     visible[0] = true;
     let index = 0;
     let screen = 0;
+
+    let firstName;
+    let lastName;
+    let email;
+    let address;
 
     function nextPage() {
         visible[index] = false;
@@ -105,18 +110,27 @@
             {:else if screen == 1}
                 <div class="row-start-2 lg:row-start-1 mt-4 xl:mt-8">
                     <div class="mb-6">
-                        <Input id="first-name" placeholder="First Name" />
+                        <Input id="first-name" placeholder="First Name" bind:value={firstName}/>
                     </div>
                     <div class="mb-6">
-                        <Input id="last-name" placeholder="Last Name" />
+                        <Input id="last-name" placeholder="Last Name" bind:value={lastName} />
                     </div>
                     <div class="mb-6">
-                        <Input id="address" placeholder="Address" />
+                        <Input id="address" placeholder="Address" bind:value={address} />
                     </div>
                     <div class="mb-6">
-                        <Input id="email" placeholder="Email" />
+                        <Input id="email" placeholder="Email" bind:value={email} />
                     </div>
                     <Button color="blue" on:click={nextScreen}>Confirm</Button>
+                    {#key showError}
+                        {#key screen}
+                            {#if showError}
+                                <Toast dismissable color="red" class="mt-4">
+                                    Please fill in all fields
+                                </Toast>
+                            {/if}
+                        {/key}
+                    {/key}
                 </div>
             {:else}
                 <div class="row-start-2 lg:row-start-1 mt-8">
@@ -133,6 +147,7 @@
             </div>
         </div>
     </div>
+    
 </div>
 
 <style>

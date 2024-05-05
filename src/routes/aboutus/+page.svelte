@@ -27,7 +27,7 @@
             Est 1878
         </h2>
     </div>
-    <div class="px-96 pt-6 text-md lg:text-lg pb-10">
+    <div class="px-5 lg:px-10 lg:px-20 2xl:px-96 pt-6 text-md lg:text-lg pb-10">
         <p>In the rugged heartland of Montana, "Restaurant du Far West" stands as a testament to the resilience and pioneering spirit of the American West. 
         </p>
         <p>Founded in 1878 amidst the vast expanse of Big Sky Country, our establishment emerged from the dreams of settlers seeking refuge and community in the wilderness. 
@@ -92,9 +92,9 @@
 </div>
 
 <!--4th section-->
-<div class=" px-60 pb-1 flex justify-between">
+<div class="px-10 xl:px-60 pb-1 flex justify-between">
     <div>
-        <h1 class=" px-14 pt-14 text-5xl lg:text-7xl" id="title">Behind The Success</h1>
+        <h1 class="px-14 pt-14 text-5xl lg:text-7xl" id="title">Behind The Success</h1>
         <div class="px-5 pt-6 text-md lg:text-lg pb-10">
             <p class="pt-5">In the heart of Montana's rugged landscape, Tobias Henry Thompson, a seasoned cowboy turned chef, 
                 founded "Restaurant du Far West" in 1878 at the age of 40.
@@ -107,7 +107,7 @@
             </p>
         </div>
     </div>
-    <div class="p-14">
+    <div class="lg:p-14 mt-12 lg:mt-0">
         <img alt="Founder img" class="w-full" src={FounderImg}/>
     </div>
 </div>
