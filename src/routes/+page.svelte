@@ -24,7 +24,7 @@
     </NavBrand>
 
     <NavUl activeClass="text-blue-600">
-        <NavLi href="/routes" class="h-full flex items-center">Home</NavLi>
+        <NavLi href="/" class="h-full flex items-center">Home</NavLi>
         <NavLi href="/aboutus" class="h-full flex items-center">About us</NavLi>
         <NavLi href="/location" class="h-full flex items-center">Locations</NavLi>
         <NavLi><DarkMode /></NavLi>
