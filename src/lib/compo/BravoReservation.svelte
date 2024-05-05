@@ -14,7 +14,7 @@
     ];
 </script>
 
-<div class="py-20 px-60">
+<div class="py-20 px-60" id="reservations">
     <div class="bg-accent2-400 p-10">
         <h1 class="text-6xl lg:text-7xl text-center mb-10">Make a reservation</h1>
         <div class="grid grid-cols-3 grid-rows-2 gap-10">

@@ -16,14 +16,11 @@
 <!-- Landing -->
 <BravoLanding />
 
-<div class="h-20 w-full bg-accent2-400 text-3xl py-5 text-center relative z-50 text-white">
-    <ChevronDownOutline class="inline-block" size="xl"/>
-    <ChevronDownOutline class="inline-block" size="xl"/>
-    <ChevronDownOutline class="inline-block" size="xl"/>
-    Build your Burger
-    <ChevronDownOutline class="inline-block" size="xl"/>
-    <ChevronDownOutline class="inline-block" size="xl"/>
-    <ChevronDownOutline class="inline-block" size="xl"/>
+<div class="h-20 w-full bg-accent2-400 text-3xl py-10 text-center relative z-50 px-96 pb-20 text-white">
+    <h1 class="text-5xl">
+        Build Your Burger
+    </h1>
+    <hr class="mt-8">
 </div>
 
 <BravoMealBuilder />

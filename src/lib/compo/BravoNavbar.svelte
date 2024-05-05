@@ -6,23 +6,14 @@
 </script>
 
 <Navbar class="border-b py-0 absolute top-0 z-50">
-    <NavUl>
-        <NavLi>
-            <Button outline color="dark">Reservation</Button>
-        </NavLi>
-
-        <NavLi>
-            <Button outline color="dark">Order Now</Button>
-        </NavLi>
-    </NavUl>
-
     <NavBrand href="/">
         <img src="{logo}" class="me-3 h-28" alt="Restaurent du far west" /> 
         <NavHamburger />
     </NavBrand>
 
-    <NavUl activeClass="text-blue-600">
+    <NavUl activeClass="text-blue-600 align-middle">
         <NavLi href="/aboutus">About us</NavLi>
         <NavLi href="/location">Locations</NavLi>
+        <NavLi class="bg-green-500 rounded-xl w-8 h-8 text-center leading-8 align-middle">A</NavLi>
     </NavUl>
 </Navbar>
