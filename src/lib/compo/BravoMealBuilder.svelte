@@ -77,7 +77,7 @@
     }
 </script>
 
-<div class="w-full z-50 ">
+<div class="w-full z-50 dark:bg-accent2-dark-400">
     <div class="" id="order">
         <div id="custom-grid" class="grid grid-rows-2 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 p-10 lg:px-20 xl:px-40 lg:py-10">
 
@@ -90,9 +90,19 @@
                                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                                 <!-- svelte-ignore a11y-no-static-element-interactions -->
                                 <div class="grid grid-rows-4 grid-cols-4 gap-2">
-                                    <h1 class="col-start-2 text-center text-xl col-span-2">The Base</h1>
+                                    <h1 class="col-start-2 text-center text-xl col-span-2">
+                                        {#if i==0}
+                                            Bread
+                                        {:else if i==1}
+                                            Meat
+                                        {:else if i==2}
+                                            Vegetables
+                                        {:else}
+                                            Sauce
+                                        {/if}
+                                    </h1>
                                     {#each category as c, j}
-                                        <Button pill color="blue" size="xl" on:click={nextPage.bind(j)} class="col-start-2 col-span-2">{c.name}</Button>                            
+                                        <Button size="xl" on:click={nextPage.bind(j)} class="col-start-2 col-span-2 bg-primary-400">{c.name}</Button>                            
                                     {/each}
                                 </div>
                             {/if}

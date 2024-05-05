@@ -20,7 +20,7 @@
 </div>
 
 <!--2nd section-->
-<div class="grid grid-cols-2 px-10 lg:px-60 pt-14">
+<div class="grid grid-cols-2 px-10 lg:px-60 pt-14 dark:bg-primary-dark-200">
     <div class="flex flex-col justify-center gap-10">
         <div>
             <h1 class="font-bold" >Opening and Closing hours</h1>
@@ -49,7 +49,7 @@
 </div>
 
 <!--3rd section-->
-<div class="px-10 lg:px-60 pt-6 pb-5 grid grid-rows lg:grid-cols-3">
+<div class="px-10 lg:px-60 pt-6 pb-5 grid grid-rows lg:grid-cols-3 dark:bg-primary-dark-200">
     <div>
         <h1 class="pt-5 font-semibold">Address</h1>
         <p>635 Cactus St, </p>

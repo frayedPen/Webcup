@@ -11,8 +11,8 @@
     <div class="h-4/6 w-screen text-6xl flex justify-center items-center flex-col absolute top-0 z-30">
         <h1 id="title" class="text-white mt-40 lg:mt-0 px-4 text-center md:px-4">Are You Craving The Far West Taste?</h1>
         <div>
-            <Button outline color="dark" size="xl" href="#reservations">Reserve a Table</Button>
-            <Button outline color="dark" size="xl" href="#order">Order Now</Button>
+            <Button outline color="dark" size="xl" href="#reservations" class="dark:text-white">Reserve a Table</Button>
+            <Button outline color="dark" size="xl" href="#order" class="dark:text-white">Order Now</Button>
         </div>
     </div>
 

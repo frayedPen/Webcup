@@ -16,7 +16,7 @@
 
 <div class="py-5 px-4 lg:px-20 xl:px-60" id="reservations">
     <div class="bg-accent2-400 p-10">
-        <h1 class="text-6xl lg:text-7xl text-center mb-10 text-white" id="title">Make a reservation</h1>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl text-center mb-10 text-white" id="title">Make a reservation</h1>
         <div class="grid grid-rows-4 grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-10">
             <Input placeholder="Calendar" type="date"/>
             <Input placeholder="Time"  type="time"/>

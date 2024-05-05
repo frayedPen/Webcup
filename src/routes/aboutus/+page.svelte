@@ -64,7 +64,7 @@
         <div>
             <h1 class="text-5xl lg:text-5xl text-center font-semibold" id="title">Taste The West, One Bite At A Time!</h1>
         </div>
-        <div class="grid grid-cols-4 gap-10 p-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 p-20">
 
             {#if isInView}
                 <div class="text-center">
@@ -92,7 +92,7 @@
 </div>
 
 <!--4th section-->
-<div class="px-10 xl:px-60 pb-1 flex justify-between">
+<div class="px-10 xl:px-60 pb-1 flex justify-between dark:bg-primary-dark-200">
     <div>
         <h1 class="px-14 pt-14 text-5xl lg:text-7xl" id="title">Behind The Success</h1>
         <div class="px-5 pt-6 text-md lg:text-lg pb-10">

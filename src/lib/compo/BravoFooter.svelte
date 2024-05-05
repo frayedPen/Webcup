@@ -14,7 +14,7 @@
     )
 </script>
 
-<Footer class="bg-primary-400 py-4 px-2 z-50 relative md:px-10 xl:px-40">
+<Footer class="bg-primary-400 py-4 px-2 z-50 relative md:px-10 xl:px-40 overflow-x-hidden">
     <FooterBrand href="" imgClass="h-20" src="{logo}" alt="Logo" name="" />
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 py-4 mt-0">
         <div class="w-full row-start-1">
