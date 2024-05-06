@@ -5,7 +5,7 @@
     import facebook from '$lib/img/facebook white.png';
     import logo from '$lib/img/logo transparent.png';
 
-    const socials = [instagram, x, facebook, ];   
+    const socials = [instagram, x, facebook, ];
     
     import {onMount} from 'svelte';
 
@@ -14,7 +14,7 @@
     )
 </script>
 
-<Footer class="bg-primary-400 py-4 px-2 z-50 relative md:px-10 xl:px-40">
+<Footer class="bg-primary-400 py-4 px-2 z-50 relative md:px-10 xl:px-40 overflow-x-hidden">
     <FooterBrand href="" imgClass="h-20" src="{logo}" alt="Logo" name="" />
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 py-4 mt-0">
         <div class="w-full row-start-1">
@@ -25,7 +25,7 @@
                 {/each}
             </div>
         </div>
-
+        
         <div class="col-start-4 row-start-1">
             <div id="ecoindex-badge" class="-space-y-2 mb-10"></div>
             <h1 class="text-white text-lg lg:text-2xl">Get the latest Newsletter</h1>

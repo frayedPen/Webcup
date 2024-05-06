@@ -11,22 +11,29 @@
     import BravoFooter from '$lib/compo/BravoFooter.svelte';
     import { inview } from 'svelte-inview';
     import BravoNavbar from '$lib/compo/BravoNavbar.svelte';
+    import { onMount } from 'svelte';
+    import { fly, } from 'svelte/transition';
 
+    let ready = false;
     let isInView = false;
+    onMount(() => ready = true);
+
 </script>
 
 <BravoNavbar />
 <!-- 1st section -->
-<div class="pt-10 bg-primary-200 text-center">
-    <div class="text-5xl lg:text-5xl  font-bold">
-        <h1>
-            We Are Restaurant Du Far West,
-        </h1>
-        <h2>
-            Est 1878
-        </h2>
+<div class="pt-10 bg-primary-200 dark:bg-primary-dark-200 text-center">
+    <div class="text-5xl lg:text-5xl  font-bold" id="title">
+        {#if ready}
+            <h1 in:fly={{delay: 0, duration:1000, y:50}}>
+                We Are Restaurant Du Far West,
+            </h1>
+            <h2 in:fly={{delay: 300, duration:1000, y:50}}>
+                Est 1878
+            </h2>
+        {/if}
     </div>
-    <div class="px-96 pt-6 text-md lg:text-lg pb-10">
+    <div class="px-5 lg:px-10 lg:px-20 2xl:px-96 pt-6 text-md lg:text-lg pb-10">
         <p>In the rugged heartland of Montana, "Restaurant du Far West" stands as a testament to the resilience and pioneering spirit of the American West. 
         </p>
         <p>Founded in 1878 amidst the vast expanse of Big Sky Country, our establishment emerged from the dreams of settlers seeking refuge and community in the wilderness. 
@@ -44,9 +51,9 @@
 
 <!--2nd section-->
 <div class="grid grid-cols-3 h-140 overflow-hidden">
-    <img alt="Family img" class="w-full" src={FamilyImg}/>
-    <img alt="Landscape img" class="w-full" src={LandscapeImg}/>
-    <img alt="Door img" class="w-full" src={DoorImg}/>
+    <img alt="Family img" class="w-full hover:scale-105 duration-300 z-0" src={FamilyImg}/>
+    <img alt="Landscape img" class="w-full hover:scale-105 duration-300 z-10" src={LandscapeImg}/>
+    <img alt="Door img" class="w-full hover:scale-105 duration-300 z-20" src={DoorImg}/>
 </div>
 
 <!--3rd section-->
@@ -59,11 +66,11 @@
         }}>
     </div>
 
-    <div class="bg-primary-200 pt-14">
+    <div class="bg-primary-200 dark:bg-primary-dark-200 pt-14">
         <div>
-            <h1 class="text-5xl lg:text-5xl text-center font-semibold">Taste The West, One Bite At A Time!</h1>
+            <h1 class="text-5xl lg:text-5xl text-center font-semibold" id="title">Taste The West, One Bite At A Time!</h1>
         </div>
-        <div class="grid grid-cols-4 gap-10 p-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 p-20">
 
             {#if isInView}
                 <div class="text-center">
@@ -91,9 +98,9 @@
 </div>
 
 <!--4th section-->
-<div class=" px-60 pb-1 flex justify-between">
+<div class="px-10 xl:px-60 pb-1 flex justify-between dark:bg-primary-dark-200">
     <div>
-        <h1 class=" px-14 pt-14 text-5xl lg:text-7xl">Behind The Success</h1>
+        <h1 class="px-14 pt-14 text-5xl lg:text-7xl" id="title">Behind The Success</h1>
         <div class="px-5 pt-6 text-md lg:text-lg pb-10">
             <p class="pt-5">In the heart of Montana's rugged landscape, Tobias Henry Thompson, a seasoned cowboy turned chef, 
                 founded "Restaurant du Far West" in 1878 at the age of 40.
@@ -106,10 +113,16 @@
             </p>
         </div>
     </div>
-    <div class="p-14">
+    <div class="lg:p-14 mt-12 lg:mt-0">
         <img alt="Founder img" class="w-full" src={FounderImg}/>
     </div>
 </div>
                 
 <!-- Footer -->
 <BravoFooter />
+
+<style>
+    #title {
+        font-family: 'Royale', sans-serif
+    }
+</style>

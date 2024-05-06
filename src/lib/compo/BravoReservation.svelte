@@ -14,17 +14,23 @@
     ];
 </script>
 
-<div class="py-20 px-60" id="reservations">
+<div class="py-5 px-4 lg:px-20 xl:px-60" id="reservations">
     <div class="bg-accent2-400 p-10">
-        <h1 class="text-6xl lg:text-7xl text-center mb-10 text-white">Make a reservation</h1>
-        <div class="grid grid-cols-3 grid-rows-2 gap-10">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl text-center mb-10 text-white" id="title">Make a reservation</h1>
+        <div class="grid grid-rows-4 grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-10">
             <Input placeholder="Calendar" type="date"/>
             <Input placeholder="Time"  type="time"/>
             <div class="flex items-center">
                 <UserOutline class="w-10 h-10" />
                 <Select class="mt-2" items={countries} bind:value={selected} />
             </div>
-            <Button outline color="dark" class="col-start-2 text-white hover:bg-primary-500">Make Reservation</Button>
+            <Button outline color="dark" class="md:col-start-1 col-start-2 text-white hover:bg-primary-500">Make Reservation</Button>
         </div>
     </div>
 </div>
+
+<style>
+    #title {
+        font-family: 'Royale', sans-serif
+    }
+</style>

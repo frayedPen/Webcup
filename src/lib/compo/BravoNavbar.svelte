@@ -1,7 +1,7 @@
 <script>
     // @ts-nocheck
     import "$lib/app.css"; //tailwind
-    import { Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
+    import { DarkMode, Navbar, NavBrand,Input, NavLi, NavUl, Button, NavHamburger,Thumbnails,ButtonGroup,Card, Avatar, } from 'flowbite-svelte';
     import logo from '$lib/img/logo.jpg';
     import { fly } from 'svelte/transition';
 
@@ -20,8 +20,10 @@
     </NavBrand>
 
     <NavUl activeClass="text-blue-600 align-middle">
-        <NavLi href="/aboutus">About us</NavLi>
-        <NavLi href="/location">Locations</NavLi>
+        <NavLi href="/" class="h-full flex items-center">Home</NavLi>
+        <NavLi href="/aboutus" class="h-full flex items-center">About us</NavLi>
+        <NavLi href="/location" class="h-full flex items-center">Locations</NavLi>
+        <NavLi><DarkMode /></NavLi>
     </NavUl>
 </Navbar>
 

@@ -9,7 +9,7 @@
 
 <div class="bravo-landing-image bg-cover bg-no-repeat overflow-hidden relative" style="background-image: url('{landingImage}'); background-position: center bottom">
     <div class="h-full w-screen text-6xl flex justify-center items-center flex-col z-50">
-        <h1 class="text-white">Are You Craving The Far West Taste?</h1>
+        <h1 class="text-white ">Are You Craving The Far West Taste?</h1>
         <Button pill size="lg">Order Now</Button>
     </div>
     <div class="h-full w-full absolute top-0 left-0 grid grid-cols-2">
